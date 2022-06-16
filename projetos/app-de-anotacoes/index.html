@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anotações</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="container-anotacoes">
+		
+	</div>
+
+	<div class="btnadd"><b>+</b></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js
+"></script>
+<script>
+	
+		//Vanilla Js
+
+		
+			var botao = document.querySelector('.btnadd');
+			var container = document.querySelector('.container-anotacoes');
+			botao.addEventListener('click', function(){
+			var date = new Date();
+			var hr = date.getHours();
+			var mm = date.getMinutes();
+			var finaltime = hr+":"+mm;
+			var el = '<div class="ant-single"><textarea placeholder="sua nova anotação em '+finaltime+'"></textarea></div>';
+			container.innerHTML += el;
+		})
+		
+	//Jquery
+
+	/*
+	$(function(){
+		$('.btnadd').click(function(){
+			var el = '<div class="ant-single"><textarea ></textarea></div>'
+			$('.container-anotacoes').append(el);
+		})
+	})
+		var textarea = $('.ant-single').last().find('textarea');
+
+		var date = new Date();
+		var hr = date.getHours();
+		var mm = date.getMinutes();
+
+		var finaltime = hr+":"+mm;
+		textarea.html("nova anotação em: "+finaltime);
+	*/
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+:root {
+	--body-bg: #fafafa;
+	--body-color: #555;
+
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--body-bg);
+    transition: background 0.5s linear, color 0.5s linear;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  body.dark{
+  	background-color: #333333;
+  	color: #00ff00;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+
+.brand-logo{
+	margin-left: 15% !important;
+}
+
+
+.mobile-logo{
+	display: none !important;
+}
+
+.my-marginR{
+	margin-right: 12% !important;
+}
+
+.foto{
+	background-image: url('../images/chris.png');
+	background-size: cover;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background-color: white;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	margin-top: 100px;
+}
+
+.social-media{
+
+	margin-top: 5%;
+}
+
+.social-media a{
+	margin-right: 5px;
+}
+
+
+
+.slick-dots{
+	display: none !important;
+}
+
+.carousel img{
+	
+	border: 4px inset white;
+	margin-top: 30px;
+	width: 45%;
+	margin-left: 30%;
+	margin-bottom: 15px;
+
+}
+
+.carousel .container{
+
+	max-width: 900px;
+	text-align: center;
+
+}
+
+.btndark{
+	cursor: pointer;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	width: 60px;
+	height: 60px;
+	background-color: cyan;
+	color: black;
+	border-radius: 30px;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 60px;
+	text-align: center;
+	z-index: 999;
+}
+
+
+@media screen and (max-width: 992px){
+
+	.social-media{
+		margin-right: 25%;
+	}
+	.desktop-logo{display: none !important;}
+	.brand-logo{margin-left: 0 !important;}
+	.mobile-logo{display: block !important;}
+}
+
+.btn[input=checkbox]{background-color: red;}
+@media screen and (max-width: 768px){
+
+	.social-media{
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.carousel img{
+		
+		width: 100%;
+
+		margin-left: 0;
+	}
+
+
+
+}
