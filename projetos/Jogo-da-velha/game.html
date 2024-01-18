@@ -1,0 +1,152 @@
+<html>
+    <style>
+        *{
+            background-color: #1a1b1c;
+            color: white;
+        }
+        .center{
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+
+        }
+        .align  {
+            display: flex;
+        }
+         .vencedor {
+             text-align: center;
+         }
+         
+        .playerop img,
+        .enemyop img{
+           max-width: 200;
+           opacity: 0.3;
+           cursor: pointer;
+        }
+        .playerop img,
+        .enemyop img{
+           width: 70%;
+        }
+
+    </style>
+    <body>
+        <h2 style="text-align: center;">JO-KEN-PO</h2>
+        <hr>
+        <h3 class="vencedor"></h3>
+        <div class="align">
+        
+        <div class="center">
+        <div class="playerop">
+        <div> <img opt = "rock" src="rock.png"/> </div>
+        <div> <img opt = "paper" src="paper.png"/> </div>
+        <div> <img opt = "scisor" src="scisor.png"/> </div>
+        </div>
+        <div class="enemyop">
+            <div> <img opt = "rock"  src="rock.png" /> </div>
+            <div> <img opt = "paper" src="paper.png"/> </div>
+            <div> <img opt = "scisor" src="scisor.png"/> </div>
+            </div>
+    </div>
+
+    </div><!--center-->
+   
+        <script>
+
+        window.onload = function alerta(){
+            alert("Leia o console para um pequeno detalhe!");
+            console.log("Esse game de JO-KEN-PO não foi desenvolvido de forma responsiva porque foi apenas um teste de lógica de programação para games usando Javascript.")
+        }
+            var elements = document.querySelectorAll('.playerop div > img');
+            var playeropt = "";
+            var inimigopt = "";
+            var vencedor = document.querySelector('.vencedor');
+            function resetE() {
+                const enemyOption = document.querySelectorAll('.enemyop div');
+                for(var i=0; i < enemyOption.length;i++){
+                   
+                        enemyOption[i].childNodes[1].style.opacity= 0.3;
+                    
+            }
+        }
+        function validation() {
+                 if(playeropt == "paper"){
+                     if(inimigopt == "paper"){
+                     vencedor.innerHTML = "Empate";
+                     
+                 
+                     }else if (inimigopt == "scisor"){
+                        vencedor.innerHTML = "Perdeu";
+                    }
+                    else if (inimigopt == "rock"){
+                        vencedor.innerHTML = "Ganhou";
+                    }
+                       
+                     
+                    }
+
+                        if(playeropt == "scisor"){
+                        if(inimigopt == "scisor"){
+                        vencedor.innerHTML = "Empate";
+                        
+                    
+                        }else if (inimigopt == "rock"){
+                            vencedor.innerHTML = "Perdeu";
+                        }
+                        else if (inimigopt == "paper"){
+                            vencedor.innerHTML = "Ganhou";
+                        }
+                        
+                        
+                        }
+
+                            if(playeropt == "rock"){
+                            if(inimigopt == "rock"){
+                            vencedor.innerHTML = "Empate";
+                            
+                        
+                            }else if (inimigopt == "paper"){
+                                vencedor.innerHTML = "Perdeu";
+                            }
+                            else if (inimigopt == "scisor"){
+                                vencedor.innerHTML = "Ganhou";
+                            }
+                            
+                            
+                            }
+
+
+        }
+            function enemyplay(){
+                let rand = Math.floor(Math.random()*3);
+       
+                const enemyOption = document.querySelectorAll('.enemyop div');
+                resetE();
+                for(var i=0; i < enemyOption.length;i++){
+                    if(i == rand) {
+                        enemyOption[i].childNodes[1].style.opacity= 1;
+                        inimigopt = enemyOption[i].childNodes[1].getAttribute('opt');
+                    }
+                }
+                validation();
+            }
+           
+            function reset(){
+                for(i=0; i < elements.length;i++) {
+                    elements[i].style.opacity = 0.3;
+                }
+            }
+            for(var i=0; i < elements.length;i++){
+                elements[i].addEventListener('click', function(t){
+                    reset();
+                    t.target.style.opacity = 1;
+                    playeropt = t.target.getAttribute('opt');
+                    enemyplay();
+                })
+            }
+
+
+        </script>
+
+
+</body>
+</html>

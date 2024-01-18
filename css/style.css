@@ -1,0 +1,26 @@
+.card{
+    margin-bottom: 20px;
+}
+
+
+.links{
+  text-decoration: none;
+  color: black;
+  
+
+}
+
+.links:hover{
+  transition: 0,7s;
+  color: #706e6e;
+
+}
+
+
+
+
+.footer{
+  background-color: #f14668;
+  color: white;
+    
+}
